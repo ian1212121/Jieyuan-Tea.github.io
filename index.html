@@ -1,68 +1,831 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>詰源茶葉</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>詰源茶葉｜南投高山茶專賣</title>
+
 
 <style>
-body{
-    font-family:"Microsoft JhengHei";
-    background:#f5f5f5;
-    text-align:center;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;700&display=swap');
+
+
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+
+body{
+
+    font-family:
+    "Noto Sans TC",
+    sans-serif;
+
+    background:#f7f3e8;
+
+    color:#333;
+
+}
+
+
+
+header{
+
+
+height:100vh;
+
+background:
+
+linear-gradient(
+rgba(0,0,0,0.35),
+rgba(0,0,0,0.35)
+),
+
+url("images/tea-bg.jpg");
+
+
+background-size:cover;
+
+background-position:center;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+color:white;
+
+
+}
+
+
+
+.hero h1{
+
+font-family:
+"Noto Serif TC",
+serif;
+
+
+font-size:55px;
+
+letter-spacing:10px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.hero h2{
+
+
+font-size:30px;
+
+margin-bottom:20px;
+
+
+}
+
+
+
+.hero p{
+
+font-size:20px;
+
+line-height:2;
+
+}
+
+
+
+.btn{
+
+
+display:inline-block;
+
+margin-top:30px;
+
+padding:15px 45px;
+
+border-radius:40px;
+
+
+background:#315b2a;
+
+color:white;
+
+text-decoration:none;
+
+
+font-size:18px;
+
+
+transition:0.3s;
+
+}
+
+
+.btn:hover{
+
+background:#557c42;
+
+}
+
+
+
+/* 區塊 */
+
+
+section{
+
+
+padding:70px 10%;
+
+
+}
+
+
+
+.title{
+
+
+text-align:center;
+
+font-family:
+"Noto Serif TC";
+
+font-size:38px;
+
+color:#315b2a;
+
+margin-bottom:40px;
+
+
+}
+
+
+
+/* 品牌 */
+
+
+.about{
+
+
+display:flex;
+
+gap:40px;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+
+}
+
+
+
+.about img{
+
+
+width:350px;
+
+border-radius:20px;
+
+
+}
+
+
+
+.about-text{
+
+
+flex:1;
+
+font-size:18px;
+
+line-height:2;
+
+
+}
+
+
+
+/* 茶品 */
+
+
+.products{
+
+
+display:flex;
+
+gap:30px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+
+}
+
+
 
 .card{
-    max-width:600px;
-    margin:auto;
-    background:white;
-    padding:20px;
+
+
+background:white;
+
+width:300px;
+
+
+border-radius:20px;
+
+overflow:hidden;
+
+
+box-shadow:
+0 5px 20px rgba(0,0,0,.1);
+
+
 }
 
-img{
-    width:100%;
-    border-radius:10px;
+
+
+.card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+
 }
 
-.button{
-    display:block;
-    background:#2e7d32;
-    color:white;
-    padding:15px;
-    margin:10px;
-    text-decoration:none;
-    border-radius:8px;
-    font-size:20px;
+
+
+.card h3{
+
+
+padding:20px 20px 10px;
+
+
+font-size:25px;
+
+color:#315b2a;
+
+
 }
+
+
+
+.card p{
+
+
+padding:0 20px 25px;
+
+line-height:1.8;
+
+
+}
+
+
+
+
+/* 流程 */
+
+
+.steps{
+
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+
+}
+
+
+
+.step{
+
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+width:220px;
+
+text-align:center;
+
+
+}
+
+
+
+.step span{
+
+
+font-size:45px;
+
+
+}
+
+
+
+.step h3{
+
+
+color:#315b2a;
+
+margin:15px;
+
+
+}
+
+
+
+/* 聯絡 */
+
+
+.contact{
+
+
+background:#315b2a;
+
+color:white;
+
+text-align:center;
+
+
+}
+
+
+
+.contact h2{
+
+
+font-family:
+"Noto Serif TC";
+
+font-size:40px;
+
+
+}
+
+
+
+.contact p{
+
+
+font-size:20px;
+
+line-height:2.2;
+
+
+}
+
+
+
+.contact a{
+
+
+display:block;
+
+margin:15px auto;
+
+max-width:350px;
+
+background:white;
+
+color:#315b2a;
+
+
+padding:15px;
+
+border-radius:30px;
+
+
+text-decoration:none;
+
+font-size:20px;
+
+
+}
+
+
+
+
+footer{
+
+
+background:#203c1b;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+
+}
+
+
+
+/* 手機 */
+
+
+@media(max-width:768px){
+
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+
+
+.hero h2{
+
+font-size:25px;
+
+}
+
+
+
+.title{
+
+font-size:30px;
+
+}
+
+
+
+section{
+
+padding:50px 5%;
+
+}
+
+
+}
+
+
+
+
 </style>
+
 
 </head>
 
+
+
 <body>
 
-<div class="card">
 
-<h1>詰源茶葉</h1>
 
-<img src="image.png">
+<!-- 首頁 -->
 
-<h2>高山茶專賣</h2>
 
-<p>四季春｜翠玉</p>
+<header>
 
-<p>老闆：張右昌</p>
 
-<a class="button" href="tel:0960105028">
-📞 撥打電話
+<div class="hero">
+
+
+<h1>
+詰源茶葉
+</h1>
+
+
+<h2>
+南投高山茶專賣
+</h2>
+
+
+<p>
+
+四季春・翠玉<br>
+
+來自山林的自然茶香
+
+</p>
+
+
+
+<a class="btn"
+href="tel:0960105028">
+
+立即詢問茶葉
+
 </a>
 
-<a class="button"
-href="https://maps.google.com/?q=南投縣名間鄉埔中村埔中巷2-2號">
-📍 Google導航
-</a>
 
 </div>
 
+
+</header>
+
+
+
+
+<!-- 品牌介紹 -->
+
+
+<section>
+
+
+<h2 class="title">
+
+🍃 關於詰源茶葉
+
+</h2>
+
+
+
+<div class="about">
+
+
+<img src="images/logo.png">
+
+
+<div class="about-text">
+
+
+<p>
+
+我們位於南投茶鄉，
+專注於台灣高山茶製作。
+
+</p>
+
+
+<p>
+
+嚴選優質茶菁，
+透過傳統製茶工藝，
+保留茶葉自然香氣與甘甜回韻。
+
+</p>
+
+
+<p>
+
+一杯好茶，
+來自土地、氣候與製茶人的堅持。
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- 茶品 -->
+
+
+<section>
+
+
+<h2 class="title">
+
+🍵 精選茶品
+
+</h2>
+
+
+
+<div class="products">
+
+
+<div class="card">
+
+
+<img src="images/tea1.jpg">
+
+
+<h3>
+四季春茶
+</h3>
+
+
+<p>
+
+清香型茶葉<br>
+
+入口甘甜<br>
+
+適合日常品飲
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<img src="images/tea2.jpg">
+
+
+<h3>
+翠玉茶
+</h3>
+
+
+<p>
+
+香氣優雅<br>
+
+滋味清爽<br>
+
+回甘持久
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- 製茶理念 -->
+
+
+<section>
+
+
+<h2 class="title">
+
+🌱 製茶理念
+
+</h2>
+
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<span>
+⛰️
+</span>
+
+<h3>
+茶園栽培
+</h3>
+
+<p>
+天然環境孕育茶香
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<span>
+🍃
+</span>
+
+
+<h3>
+人工挑選
+</h3>
+
+<p>
+挑選優質茶菁
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<span>
+🔥
+</span>
+
+
+<h3>
+傳統製茶
+</h3>
+
+<p>
+掌握火候與工藝
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- 聯絡 -->
+
+
+<section class="contact">
+
+
+<h2>
+詰源茶葉
+</h2>
+
+
+<p>
+
+📍 南投縣名間鄉<br>
+
+👤 老闆：張右昌<br>
+
+📞 0960105028
+
+</p>
+
+
+
+
+<a href="tel:0960105028">
+
+📞 撥打電話
+
+</a>
+
+
+
+<a href="https://maps.google.com">
+
+📍 Google導航
+
+</a>
+
+
+</section>
+
+
+
+
+
+
+<footer>
+
+
+© 2026 詰源茶葉 All Rights Reserved.
+
+
+</footer>
+
+
+
 </body>
+
 </html>
