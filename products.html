@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="詰源茶葉｜精選台灣茶品，提供四季春、翠玉及各式高山茶，查看茶葉特色、價格與詳細介紹。">
+
+    <title>精選茶品｜詰源茶葉</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+
+        /* =====================================================
+           基本設定
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                "Noto Sans TC",
+                sans-serif;
+
+            background: #f8f6ee;
+
+            color: #333;
+
+            line-height: 1.8;
+
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+
+        :root {
+
+            --dark-green: #234d2b;
+
+            --green: #356b3b;
+
+            --light-green: #6f9364;
+
+            --gold: #b8944c;
+
+            --cream: #f8f6ee;
+
+            --white: #ffffff;
+
+            --gray: #777;
+
+            --dark: #26352a;
+
+        }
+
+
+
+        /* =====================================================
+           導覽列
+        ===================================================== */
+
+        .navbar {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(248, 246, 238, 0.96);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid
+                rgba(35, 77, 43, 0.08);
+
+        }
+
+
+        .nav-container {
+
+            width: min(1200px, 92%);
+
+            height: 76px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+        .brand-logo {
+
+            width: 48px;
+
+            height: 48px;
+
+            object-fit: contain;
+
+        }
+
+
+        .brand-name {
+
+            font-family:
+                "Noto Serif TC",
+                serif;
+
+            font-size: 24px;
+
+            font-weight: 700;
+
+            color: var(--dark-green);
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .nav-menu {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 35px;
+
+        }
+
+
+        .nav-menu a {
+
+            position: relative;
+
+            color: #444;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .nav-menu a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -7px;
+
+            width: 0;
+
+            height: 2px;
+
+            background:
+                var(--green);
+
+            transition: 0.3s;
+
+        }
+
+
+        .nav-menu a:hover {
+
+            color: var(--green);
+
+        }
+
+
+        .nav-menu a:hover::after {
+
+            width: 100%;
+
+        }
+
+
+        .nav-menu .active {
+
+            color: var(--green);
+
+        }
+
+
+        .nav-menu .active::after {
+
+            width: 100%;
+
+        }
+
+
+        .nav-buy {
+
+            padding: 9px 20px;
+
+            border-radius: 30px;
+
+            background:
+                var(--dark-green);
+
+            color: white !important;
+
+        }
+
+
+        .nav-buy::after {
+
+            display: none;
+
+        }
+
+
+
+        /* =====================================================
+           頁面 Hero
+        ===================================================== */
+
+        .page-hero {
+
+            min-height: 430px;
+
+            padding-top: 76px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+
+                linear-gradient(
+                    rgba(25, 62, 31, 0.72),
+                    rgba(25, 62, 31, 0.72)
+                ),
+
+                url("images/tea-bg.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+
+        .page-hero-content {
+
+            padding: 60px 20px;
+
+        }
+
+
+        .page-hero-small {
+
+            font-size: 13px;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 12px;
+
+            opacity: 0.85;
+
+        }
+
+
+        .page-hero h1 {
+
+            font-family:
+                "Noto Serif TC",
+                serif;
+
+            font-size:
+                clamp(42px, 6vw, 65px);
+
+            letter-spacing: 8px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .page-hero p {
+
+            font-size: 17px;
+
+            color:
+                rgba(255,255,255,0.85);
+
+        }
+
+
+
+        /* =====================================================
+           麵包屑
+        ===================================================== */
+
+        .breadcrumb {
+
+            background: white;
+
+            border-bottom:
+                1px solid #e5e2d8;
+
+        }
+
+
+        .breadcrumb-container {
+
+            width: min(1150px, 92%);
+
+            margin: auto;
+
+            padding: 15px 0;
+
+            font-size: 13px;
+
+            color: #888;
+
+        }
+
+
+        .breadcrumb a {
+
+            color: var(--green);
+
+        }
+
+
+        .breadcrumb span {
+
+            margin: 0 8px;
+
+            color: #bbb;
+
+        }
+
+
+
+        /* =====================================================
+           商品區
+        ===================================================== */
+
+        .products-section {
+
+            padding: 90px 20px 110px;
+
+        }
+
+
+        .container {
+
+            width: min(1150px, 92%);
+
+            margin: auto;
+
+        }
+
+
+        .section-heading {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .section-heading .en {
+
+            display: block;
+
+            color: var(--light-green);
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .section-heading h2 {
+
+            font-family:
+                "Noto Serif TC",
+                serif;
+
+            font-size: 38px;
+
+            color: var(--dark-green);
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .section-heading p {
+
+            color: var(--gray);
+
+            margin-top: 10px;
+
+            font-size: 15px;
+
+        }
+
+
+
+        /* =====================================================
+           商品分類
+        ===================================================== */
+
+        .category-menu {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 50px;
+
+        }
+
+
+        .category {
+
+            padding: 8px 22px;
+
+            border-radius: 30px;
+
+            border:
+                1px solid #d7d4c8;
+
+            color: #666;
+
+            background: white;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .category:hover {
+
+            border-color:
+                var(--green);
+
+            color:
+                var(--green);
+
+        }
+
+
+        .category.active {
+
+            background:
+                var(--dark-green);
+
+            border-color:
+                var(--dark-green);
+
+            color: white;
+
+        }
+
+
+
+        /* =====================================================
+           商品 Grid
+        ===================================================== */
+
+        .product-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 35px;
+
+        }
+
+
+
+        /* =====================================================
+           商品卡片
+        ===================================================== */
+
+        .product-card {
+
+            background: white;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 30px
+                rgba(0,0,0,0.07);
+
+            transition: 0.35s;
+
+        }
+
+
+        .product-card:hover {
+
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                0 18px 40px
+                rgba(0,0,0,0.12);
+
+        }
+
+
+
+        /* 商品圖片 */
+
+        .product-image {
+
+            height: 330px;
+
+            overflow: hidden;
+
+            position: relative;
+
+        }
+
+
+        .product-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+
+        }
+
+
+        .product-card:hover
+        .product-image img {
+
+            transform:
+                scale(1.06);
+
+        }
+
+
+        .product-tag {
+
+            position: absolute;
+
+            top: 18px;
+
+            left: 18px;
+
+            z-index: 2;
+
+            padding:
+                5px 14px;
+
+            border-radius: 30px;
+
+            background:
+                var(--dark-green);
+
+            color: white;
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+
+        /* 商品內容 */
+
+        .product-content {
+
+            padding: 28px 30px 30px;
+
+        }
+
+
+        .product-category {
+
+            color:
+                var(--gold);
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .product-content h3 {
+
+            font-family:
+                "Noto Serif TC",
+                serif;
+
+            font-size: 29px;
+
+            color:
+                var(--dark-green);
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .product-intro {
+
+            color: #777;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+
+            min-height: 55px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        /* =====================================================
+           風味資訊
+        ===================================================== */
+
+        .taste-info {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            border-top:
+                1px solid #e9e6dc;
+
+            border-bottom:
+                1px solid #e9e6dc;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .taste-item {
+
+            text-align: center;
+
+            padding: 12px 5px;
+
+        }
+
+
+        .taste-item:not(:last-child) {
+
+            border-right:
+                1px solid #e9e6dc;
+
+        }
+
+
+        .taste-label {
+
+            display: block;
+
+            color: #999;
+
+            font-size: 11px;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .taste-value {
+
+            color:
+                var(--dark-green);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+        }
+
+
+
+        /* =====================================================
+           價格
+        ===================================================== */
+
+        .price-row {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .price-text {
+
+            color: #999;
+
+            font-size: 13px;
+
+        }
+
+
+        .price {
+
+            color:
+                var(--gold);
+
+            font-size: 27px;
+
+            font-weight: 700;
+
+        }
+
+
+        .price-unit {
+
+            color: #888;
+
+            font-size: 13px;
+
+            margin-left: 3px;
+
+        }
+
+
+
+        /* =====================================================
+           商品按鈕
+        ===================================================== */
+
+        .product-buttons {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 10px;
+
+        }
+
+
+        .product-button {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 11px 10px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .button-outline {
+
+            border:
+                1px solid
+                var(--dark-green);
+
+            color:
+                var(--dark-green);
+
+            background: white;
+
+        }
+
+
+        .button-outline:hover {
+
+            background:
+                var(--dark-green);
+
+            color: white;
+
+        }
+
+
+        .button-primary {
+
+            background:
+                var(--dark-green);
+
+            color: white;
+
+        }
+
+
+        .button-primary:hover {
+
+            background:
+                var(--green);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+
+        /* =====================================================
+           商品說明
+        ===================================================== */
+
+        .product-note {
+
+            margin-top: 50px;
+
+            padding: 20px 25px;
+
+            background:
+                #eeece2;
+
+            border-radius: 8px;
+
+            color: #777;
+
+            font-size: 13px;
+
+            text-align: center;
+
+        }
+
+
+
+        /* =====================================================
+           品牌 CTA
+        ===================================================== */
+
+        .cta {
+
+            padding: 85px 20px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+
+                linear-gradient(
+                    rgba(31,72,37,0.94),
+                    rgba(31,72,37,0.94)
+                ),
+
+                url("images/tea-bg.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+
+        .cta h2 {
+
+            font-family:
+                "Noto Serif TC",
+                serif;
+
+            font-size: 38px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .cta p {
+
+            color:
+                rgba(255,255,255,0.8);
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .cta-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-width: 220px;
+
+            padding: 13px 25px;
+
+            border-radius: 30px;
+
+            background: white;
+
+            color:
+                var(--dark-green);
+
+            transition: 0.3s;
+
+        }
+
+
+        .cta-button:hover {
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+
+        /* =====================================================
+           Footer
+        ===================================================== */
+
+        footer {
+
+            background:
+                #19361e;
+
+            color:
+                rgba(255,255,255,0.7);
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            font-size: 13px;
+
+        }
+
+
+        .footer-brand {
+
+            font-family:
+                "Noto Serif TC",
+                serif;
+
+            font-size: 20px;
+
+            color: white;
+
+            margin-bottom: 5px;
+
+        }
+
+
+
+        /* =====================================================
+           手機版
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            .nav-menu {
+
+                display: none;
+
+            }
+
+
+            .product-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .product-image {
+
+                height: 350px;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .nav-container {
+
+                height: 65px;
+
+            }
+
+
+            .brand-logo {
+
+                width: 40px;
+
+                height: 40px;
+
+            }
+
+
+            .brand-name {
+
+                font-size: 20px;
+
+                letter-spacing: 2px;
+
+            }
+
+
+            .page-hero {
+
+                min-height: 350px;
+
+            }
+
+
+            .page-hero h1 {
+
+                letter-spacing: 5px;
+
+            }
+
+
+            .products-section {
+
+                padding:
+                    65px 15px 80px;
+
+            }
+
+
+            .section-heading h2 {
+
+                font-size: 30px;
+
+            }
+
+
+            .product-image {
+
+                height: 260px;
+
+            }
+
+
+            .product-content {
+
+                padding:
+                    25px 20px;
+
+            }
+
+
+            .product-buttons {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .cta h2 {
+
+                font-size: 29px;
+
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- =====================================================
+         導覽列
+    ===================================================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+
+            <a
+                href="index.html"
+                class="brand"
+            >
+
+                <img
+                    src="images/logo.png"
+                    alt="詰源茶葉 Logo"
+                    class="brand-logo"
+                >
+
+                <span class="brand-name">
+                    詰源茶葉
+                </span>
+
+            </a>
+
+
+
+            <div class="nav-menu">
+
+                <a href="index.html">
+                    首頁
+                </a>
+
+
+                <a href="index.html#about">
+                    關於我們
+                </a>
+
+
+                <a
+                    href="products.html"
+                    class="active"
+                >
+                    精選茶品
+                </a>
+
+
+                <a href="index.html#contact">
+                    聯絡我們
+                </a>
+
+
+                <a
+                    href="#products"
+                    class="nav-buy"
+                >
+                    查看商品
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         頁面標題
+    ===================================================== -->
+
+    <header class="page-hero">
+
+        <div class="page-hero-content">
+
+            <div class="page-hero-small">
+                OUR TEA COLLECTION
+            </div>
+
+
+            <h1>
+                精選茶品
+            </h1>
+
+
+            <p>
+                嚴選台灣茶葉，品味每一款茶不同的風味
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         麵包屑
+    ===================================================== -->
+
+    <div class="breadcrumb">
+
+        <div class="breadcrumb-container">
+
+            <a href="index.html">
+                首頁
+            </a>
+
+            <span>
+                /
+            </span>
+
+            <strong>
+                精選茶品
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         商品區
+    ===================================================== -->
+
+    <main
+        class="products-section"
+        id="products"
+    >
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <span class="en">
+                    TEA COLLECTION
+                </span>
+
+                <h2>
+                    找一款適合你的茶
+                </h2>
+
+                <p>
+                    每一款茶，都有屬於自己的香氣與風味
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 商品分類
+            ================================================= -->
+
+            <div class="category-menu">
+
+                <a
+                    href="#products"
+                    class="category active"
+                >
+                    全部茶品
+                </a>
+
+
+                <a
+                    href="#high-mountain"
+                    class="category"
+                >
+                    高山茶
+                </a>
+
+
+                <a
+                    href="#fragrance"
+                    class="category"
+                >
+                    清香型
+                </a>
+
+
+                <a
+                    href="#classic"
+                    class="category"
+                >
+                    經典茶款
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 商品列表
+            ================================================= -->
+
+            <div class="product-grid">
+
+
+
+                <!-- =============================================
+                     四季春茶
+                ============================================== -->
+
+                <article
+                    class="product-card"
+                    id="four-season"
+                >
+
+
+                    <div class="product-image">
+
+                        <span class="product-tag">
+                            熱門推薦
+                        </span>
+
+
+                        <img
+                            src="images/tea1.jpg"
+                            alt="詰源茶葉 四季春茶"
+                        >
+
+                    </div>
+
+
+
+                    <div class="product-content">
+
+
+                        <div class="product-category">
+                            FRAGRANCE TEA
+                        </div>
+
+
+                        <h3>
+                            四季春茶
+                        </h3>
+
+
+                        <p class="product-intro">
+
+                            清香型茶款，
+                            茶湯清爽甘甜，
+                            帶有自然花香與細緻回甘，
+                            適合日常飲用。
+
+                        </p>
+
+
+
+                        <!-- 風味 -->
+
+                        <div class="taste-info">
+
+
+                            <div class="taste-item">
+
+                                <span class="taste-label">
+                                    香氣
+                                </span>
+
+                                <span class="taste-value">
+                                    清香
+                                </span>
+
+                            </div>
+
+
+                            <div class="taste-item">
+
+                                <span class="taste-label">
+                                    口感
+                                </span>
+
+                                <span class="taste-value">
+                                    甘甜
+                                </span>
+
+                            </div>
+
+
+                            <div class="taste-item">
+
+                                <span class="taste-label">
+                                    回甘
+                                </span>
+
+                                <span class="taste-value">
+                                    細緻
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- 價格 -->
+
+                        <div class="price-row">
+
+                            <span class="price-text">
+                                75g 起
+                            </span>
+
+
+                            <div>
+
+                                <span class="price">
+                                    NT$180
+                                </span>
+
+                                <span class="price-unit">
+                                    起
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- 按鈕 -->
+
+                        <div class="product-buttons">
+
+
+                            <a
+                                href="product.html?tea=four-season"
+                                class="product-button button-outline"
+                            >
+                                查看詳細
+                            </a>
+
+
+                            <a
+                                href="tel:0960105028"
+                                class="product-button button-primary"
+                            >
+                                📞 立即詢問
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+
+                <!-- =============================================
+                     翠玉茶
+                ============================================== -->
+
+                <article
+                    class="product-card"
+                    id="jade"
+                >
+
+
+                    <div class="product-image">
+
+                        <span class="product-tag">
+                            經典茶款
+                        </span>
+
+
+                        <img
+                            src="images/tea2.jpg"
+                            alt="詰源茶葉 翠玉茶"
+                        >
+
+                    </div>
+
+
+
+                    <div class="product-content">
+
+
+                        <div class="product-category">
+                            CLASSIC TEA
+                        </div>
+
+
+                        <h3>
+                            翠玉茶
+                        </h3>
+
+
+                        <p class="product-intro">
+
+                            茶香優雅，
+                            茶湯清爽柔順，
+                            入口清新並帶有持久回甘，
+                            適合喜歡清香茶款的茶友。
+
+                        </p>
+
+
+
+                        <!-- 風味 -->
+
+                        <div class="taste-info">
+
+
+                            <div class="taste-item">
+
+                                <span class="taste-label">
+                                    香氣
+                                </span>
+
+                                <span class="taste-value">
+                                    清雅
+                                </span>
+
+                            </div>
+
+
+                            <div class="taste-item">
+
+                                <span class="taste-label">
+                                    口感
+                                </span>
+
+                                <span class="taste-value">
+                                    清爽
+                                </span>
+
+                            </div>
+
+
+                            <div class="taste-item">
+
+                                <span class="taste-label">
+                                    回甘
+                                </span>
+
+                                <span class="taste-value">
+                                    持久
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- 價格 -->
+
+                        <div class="price-row">
+
+                            <span class="price-text">
+                                75g 起
+                            </span>
+
+
+                            <div>
+
+                                <span class="price">
+                                    NT$200
+                                </span>
+
+                                <span class="price-unit">
+                                    起
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- 按鈕 -->
+
+                        <div class="product-buttons">
+
+
+                            <a
+                                href="product.html?tea=jade"
+                                class="product-button button-outline"
+                            >
+                                查看詳細
+                            </a>
+
+
+                            <a
+                                href="tel:0960105028"
+                                class="product-button button-primary"
+                            >
+                                📞 立即詢問
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 商品說明
+            ================================================= -->
+
+            <div class="product-note">
+
+                🍃 每款茶葉皆有不同的風味特色，
+                歡迎點選「查看詳細」了解更多。
+
+                <br>
+
+                ※ 商品價格為目前網站展示價格，
+                實際價格與庫存請以店家提供資訊為準。
+
+                <br>
+
+                ※ 如有大量訂購或送禮需求，
+                歡迎直接與我們聯絡。
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         CTA
+    ===================================================== -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                找到喜歡的茶了嗎？
+            </h2>
+
+
+            <p>
+                歡迎直接聯絡我們，詢問茶品、價格與訂購方式。
+            </p>
+
+
+            <a
+                href="tel:0960105028"
+                class="cta-button"
+            >
+                📞 聯絡詰源茶葉
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         Footer
+    ===================================================== -->
+
+    <footer>
+
+        <div class="footer-brand">
+            詰源茶葉
+        </div>
+
+
+        <div>
+            南投高山茶專賣
+        </div>
+
+
+        <br>
+
+
+        <div>
+            © 2026 詰源茶葉 All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
